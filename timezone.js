@@ -271,3 +271,6 @@ var mzone = mzone || {};
     }
 
 })(mzone);
+
+module.exports = mzone;
+
