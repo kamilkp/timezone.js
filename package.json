@@ -1,0 +1,19 @@
+{
+  "name": "timezone",
+  "version": "1.0.0",
+  "description": "Bare minimum version of [Moment Timezone](http://momentjs.com/timezone) without dependencies.",
+  "main": "timezone.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kamilkp/timezone.js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kamilkp/timezone.js/issues"
+  },
+  "homepage": "https://github.com/kamilkp/timezone.js#readme"
+}
