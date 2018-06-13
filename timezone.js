@@ -1,12 +1,12 @@
 /**
  * Bare minimum version of Moment Timezone without dependencies.
- * 
+ *
  * Check Moment Timezone for the original source and data files:
  * http://momentjs.com/timezone
  * https://github.com/moment/moment-timezone
- * 
+ *
  * Example of how to use it:
- * 
+ *
  * <script src='timezone.js'></script>
  * <script>
  *      mzone.loadData({
@@ -22,7 +22,7 @@
  *      let d = new Date();
  *      console.log(mzone.tz(d, "Europe/Madrid").toLocaleString());
  *      console.log(mzone.tz(d, "Australia/Sydney").toLocaleString());
- * </script> 
+ * </script>
  */
 
 var mzone = mzone || {};
@@ -43,6 +43,18 @@ var mzone = mzone || {};
         }
         var offset = tz.parse(utc);
         return new Date(utc.getTime() - offset * 60000);
+    }
+
+    obj.abbr = function (date, tzName) {
+        if (typeof date === "string") {
+			date = new Date(date);
+		}
+        var utc = new Date(date.getTime() + date.getTimezoneOffset() * 60000);
+        var tz = getZone(tzName);
+        if (!tz) {
+            throw "Invalid timezone: " + tzName;
+        }
+        return tz.abbr(utc);
     }
 
     var zones = {};
